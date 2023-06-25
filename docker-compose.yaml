@@ -1,0 +1,11 @@
+version: '3'
+services:
+  fastapiai:
+    build: .
+    volumes:
+      - .dockerenv:/src/.venv
+      - .:/src
+    ports:
+      - 8080:8000
+    environment:
+      - WATCHFILES_FORCE_POLLING=true
